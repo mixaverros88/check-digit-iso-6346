@@ -62,16 +62,20 @@ public class CheckDigit {
         cd.put('Z', 38);
 
         for(int i = 0; i < containerNumber.length(); i++){
-            //get every value of character and multiply with the 2 raise to the power (sequence)
+            //Step 1,2 and 3
             sum += cd.get( containerNumber.charAt(i)) * Math.pow( 2 , i);
         }
 
+        //step 4
         int sumInteger = (int)(sum);
-        //divide by 11
+
+        //step 5
         sumInteger /=  11;
-        // multiply by 11
+
+        //step 6
         sumInteger *=  11;
-        //subtract with the sum
+
+        //step 6
         int last = (int) sum - sumInteger;
 
         if( checkDigitToVerify == checkDigitlastValue.get(last % 10)){
@@ -79,6 +83,5 @@ public class CheckDigit {
         }else{
             return false;
         }
-
     }
 }
