@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/mixaverros88/check-digit-iso-6346.svg?branch=master)](https://travis-ci.com/mixaverros88/check-digit-iso-6346)
 # Check Digit
 
 |Step| Container number                           | Total  |
