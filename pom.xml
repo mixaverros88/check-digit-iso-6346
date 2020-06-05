@@ -8,5 +8,12 @@
     <artifactId>check-digit-iso-6346</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    
+    <profiles>
+        <profile>
+            <id>noTests</id>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </profile>
+    </profiles>
 </project>
