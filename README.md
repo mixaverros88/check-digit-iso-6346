@@ -58,11 +58,11 @@ ISO 6346 is an international standard covering the coding, identification and ma
 
 
 ### :computer: Deploy instructions ###
-Use the maven plug-in (tomcat7-maven-plugin) for tomcat server in order to automatically deploy this project in your local server. You can find this plug-in in pom.xml file in order to modify with yours configurations, also don't forget to add in settings.xml your credentials for tomcat server.
+Use the maven plug-in (wildfly-maven-plugin) for tomcat server in order to automatically deploy this project in your local server. You can find this plug-in in pom.xml file in order to modify with yours configurations, also don't forget to add in settings.xml your credentials for wildfly server.
 ```
 <servers>
     <server>
-        <id>TomcatServer</id>
+        <id>server</id>
         <username>admin</username>
         <password>password</password>
     </server>
@@ -70,7 +70,7 @@ Use the maven plug-in (tomcat7-maven-plugin) for tomcat server in order to autom
 ```
 You can run the below command in order to deploy the artifact in your local tomcat server
 ```
-mvn clean tomcat7:deploy
+mvn clean wildfly:deploy
 ```
 
 After the deployment navigate to the following link

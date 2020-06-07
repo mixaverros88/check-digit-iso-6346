@@ -1,4 +1,4 @@
-package com.verros.dto;
+package com.verros.rest.dto;
 
 public class CheckDigitDto {
 

@@ -1,4 +1,4 @@
-package com.verros.common;
+package com.verros.rest.common;
 
 import java.util.HashMap;
 import java.util.Map;

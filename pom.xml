@@ -20,6 +20,12 @@
         <maven.war.plugin>2.1</maven.war.plugin>
         <java.version>1.8</java.version>
         <log4j>1.2.15</log4j>
+        <org.hibernate.javax.persistence>1.0.1.Final</org.hibernate.javax.persistence>
+        <org.hibernate>4.3.11.Final</org.hibernate>
+        <org.wildfly.plugins>1.1.0.Alpha7</org.wildfly.plugins>
+        <dom4j>1.6.1</dom4j>
+        <javaee-api>8.0</javaee-api>
+        <httpclient>4.5.8</httpclient>
     </properties>
 
 
@@ -40,7 +46,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>8.0</version>
+            <version>${javaee-api}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -68,8 +74,29 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.8</version>
+            <version>${httpclient}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${org.hibernate}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>${org.hibernate.javax.persistence}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>${org.hibernate.javax.persistence}</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -104,14 +131,9 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>${org.apache.tomcat.maven}</version>
-                <configuration>
-                    <url>http://localhost:8080/manager/text</url>
-                    <server>stage-server</server>
-                    <update>true</update>
-                </configuration>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>${org.wildfly.plugins}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
