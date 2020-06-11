@@ -1,2 +1,8 @@
-<p>check-digit works!</p>
-
+<form [formGroup]="form" (ngSubmit)="validate()">
+  <label>
+    First Name:
+    <input type="text" formControlName="digit">
+  </label>
+  <button type="submit">Submit</button>
+</form>
+<label>{{message}}</label>
