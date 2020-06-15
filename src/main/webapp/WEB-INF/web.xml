@@ -15,4 +15,14 @@
         <servlet-name>Jersey Web Application</servlet-name>
         <url-pattern>/webapi/*</url-pattern>
     </servlet-mapping>
+
+    <welcome-file-list>
+      <welcome-file>check-digit-iso6346/index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet-mapping>
+      <servlet-name>restservices</servlet-name>
+      <url-pattern>/restservices/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>

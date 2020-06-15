@@ -21,7 +21,7 @@ ISO 6346 is an international standard covering the coding, identification and ma
 |3   | Sum all results from (2)                   | 6185   |
 |4   | Divide (3) by 11 (remainder discarded)     | 562    |
 |5   | Multiply (4) by 11                         | 6182   |
-|6   | (3) minus (5) = Check Digit:               | 3      |     
+|6   | (3) minus (5) = Check Digit:               | 3      |
 
 ### Step 1
 *An equivalent numerical value is assigned to each letter of the alphabet, beginning with 10 for the letter A (11 and multiples thereof are omitted):*
@@ -75,5 +75,6 @@ mvn clean wildfly:deploy
 
 After the deployment navigate to the following link
 ```
-http://localhost:8080/check-digit-iso-6346/webapi/rest
+API: http://localhost:8080/iso/api/rest
+FrontEnd: http://localhost:8080/iso/
 ```

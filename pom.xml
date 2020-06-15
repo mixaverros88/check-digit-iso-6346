@@ -2,155 +2,233 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>war</packaging>
-    <groupId>com.verros</groupId>
-    <artifactId>check-digit-iso-6346</artifactId>
-    <version>1.0-SNAPSHOT</version>
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>war</packaging>
+  <groupId>com.verros</groupId>
+  <artifactId>check-digit-iso-6346</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <jersey.version>2.9.1</jersey.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.glassfish.jersey.test-framework>2.27</org.glassfish.jersey.test-framework>
-        <org.glassfish.jersey.test-framework.providers>2.27</org.glassfish.jersey.test-framework.providers>
-        <org.apache.maven.plugins>2.5.1</org.apache.maven.plugins>
-        <maven.help.plugin>3.1.0</maven.help.plugin>
-        <org.apache.tomcat.maven>2.2</org.apache.tomcat.maven>
-        <maven.compiler.plugin>3.2</maven.compiler.plugin>
-        <maven.war.plugin>2.1</maven.war.plugin>
-        <java.version>1.8</java.version>
-        <log4j>1.2.15</log4j>
-        <org.hibernate.javax.persistence>1.0.1.Final</org.hibernate.javax.persistence>
-        <org.hibernate>4.3.11.Final</org.hibernate>
-        <org.wildfly.plugins>1.1.0.Alpha7</org.wildfly.plugins>
-        <dom4j>1.6.1</dom4j>
-        <javaee-api>8.0</javaee-api>
-        <httpclient>4.5.8</httpclient>
-    </properties>
+  <properties>
+    <jersey.version>2.9.1</jersey.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <org.glassfish.jersey.test-framework>2.27</org.glassfish.jersey.test-framework>
+    <org.glassfish.jersey.test-framework.providers>2.27</org.glassfish.jersey.test-framework.providers>
+    <org.apache.maven.plugins>2.5.1</org.apache.maven.plugins>
+    <maven.help.plugin>3.1.0</maven.help.plugin>
+    <org.apache.tomcat.maven>2.2</org.apache.tomcat.maven>
+    <maven.compiler.plugin>3.2</maven.compiler.plugin>
+    <maven.war.plugin>2.1</maven.war.plugin>
+    <java.version>1.8</java.version>
+    <log4j>1.2.15</log4j>
+    <org.hibernate.javax.persistence>1.0.1.Final</org.hibernate.javax.persistence>
+    <org.hibernate>4.3.11.Final</org.hibernate>
+    <org.wildfly.plugins>1.1.0.Alpha7</org.wildfly.plugins>
+    <dom4j>1.6.1</dom4j>
+    <javaee-api>8.0</javaee-api>
+    <httpclient>4.5.8</httpclient>
+    <angular.project.location>angular/check-digit-iso6346</angular.project.location>
+    <angular.project.nodeinstallation>angular/check-digit-iso6346/node</angular.project.nodeinstallation>
+  </properties>
 
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.glassfish.jersey</groupId>
-                <artifactId>jersey-bom</artifactId>
-                <version>${jersey.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
+  <dependencyManagement>
     <dependencies>
-
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${javaee-api}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-servlet-core</artifactId>
-            <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
-            <!-- artifactId>jersey-container-servlet</artifactId -->
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-moxy</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.test-framework</groupId>
-            <artifactId>jersey-test-framework-core</artifactId>
-            <version>${org.glassfish.jersey.test-framework}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.test-framework.providers</groupId>
-            <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
-            <version>${org.glassfish.jersey.test-framework.providers}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${org.hibernate}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>${org.hibernate.javax.persistence}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>${org.hibernate.javax.persistence}</version>
-        </dependency>
-        <dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>${dom4j}</version>
-            <scope>provided</scope>
-        </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey</groupId>
+        <artifactId>jersey-bom</artifactId>
+        <version>${jersey.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>${javaee-api}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
+      <!-- artifactId>jersey-container-servlet</artifactId -->
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-moxy</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.test-framework</groupId>
+      <artifactId>jersey-test-framework-core</artifactId>
+      <version>${org.glassfish.jersey.test-framework}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+      <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
+      <version>${org.glassfish.jersey.test-framework.providers}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${httpclient}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${org.hibernate}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+      <version>${org.hibernate.javax.persistence}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+      <version>${org.hibernate.javax.persistence}</version>
+    </dependency>
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>${dom4j}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
 
+  <profiles>
+    <profile>
+      <id>noTests</id>
+      <properties>
+        <maven.test.skip>true</maven.test.skip>
+      </properties>
+    </profile>
+  </profiles>
 
-    <profiles>
-        <profile>
-            <id>noTests</id>
-            <properties>
-                <maven.test.skip>true</maven.test.skip>
-            </properties>
-        </profile>
-    </profiles>
+  <build>
+    <finalName>iso</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven.war.plugin}</version>
+        <configuration>
+          <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.wildfly.plugins</groupId>
+        <artifactId>wildfly-maven-plugin</artifactId>
+        <version>${org.wildfly.plugins}</version>
+      </plugin>
 
-    <build>
-        <finalName>iso</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.plugin}</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven.war.plugin}</version>
-                <configuration>
-                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.wildfly.plugins</groupId>
-                <artifactId>wildfly-maven-plugin</artifactId>
-                <version>${org.wildfly.plugins}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-help-plugin</artifactId>
-                <version>${maven.help.plugin}</version>
-                <executions>
-                    <execution>
-                        <id>show-profiles</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>active-profiles</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-help-plugin</artifactId>
+        <version>${maven.help.plugin}</version>
+        <executions>
+          <execution>
+            <id>show-profiles</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>active-profiles</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <workingDirectory>${angular.project.location}</workingDirectory>
+          <installDirectory>${angular.project.nodeinstallation}</installDirectory>
+        </configuration>
+        <executions>
+          <!-- It will install nodejs and npm -->
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>v10.13.0</nodeVersion>
+              <npmVersion>3.10.10</npmVersion>
+            </configuration>
+          </execution>
+
+          <!-- It will execute command "npm install" inside "/e2e-angular2" directory -->
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>install</arguments>
+            </configuration>
+          </execution>
+          <!-- It will execute command "npm build" inside "/e2e-angular2" directory
+              to clean and create "/dist" directory -->
+          <execution>
+            <id>npm build</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run build</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Plugin to copy the content of /angular/dist/ directory to output
+          directory (ie/ /target/transactionManager-1.0/) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.2</version>
+        <executions>
+          <execution>
+            <id>default-copy-resources</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <overwrite>true</overwrite>
+              <!-- This folder is the folder where your angular files
+              will be copied to. It must match the resulting war-file name.
+              So if you have customized the name of war-file for ex. as "app.war"
+              then below value should be ${project.build.directory}/app/
+              Value given below is as per default war-file name -->
+              <outputDirectory>${project.build.directory}/iso/</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/${angular.project.location}/dist</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
 
 </project>
