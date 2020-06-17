@@ -1,8 +1,11 @@
-<form [formGroup]="form" (ngSubmit)="validate()">
-  <label>
-    First Name:
-    <input type="text" formControlName="digit">
-  </label>
-  <button type="submit">Submit</button>
-</form>
-<label>{{message}}</label>
+
+<div class="container">
+  <form  [formGroup]="form" (ngSubmit)="validate()">
+    <div class="form-group" >
+      <label>First Name:</label>
+        <input class="form-control" type="text" formControlName="digit">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <label class="alert-danger">{{message}}</label>
+</div>

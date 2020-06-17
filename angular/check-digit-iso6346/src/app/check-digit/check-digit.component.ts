@@ -4,6 +4,7 @@ import { CheckDigitRequest } from '../models/CheckDigitRequest';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CheckDigitResponse } from '../models/CheckDigitResponse';
 
+
 @Component({
   selector: 'app-check-digit',
   templateUrl: './check-digit.component.html'
