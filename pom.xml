@@ -28,6 +28,9 @@
     <httpclient>4.5.8</httpclient>
     <angular.project.location>angular/check-digit-iso6346</angular.project.location>
     <angular.project.nodeinstallation>angular/check-digit-iso6346/node</angular.project.nodeinstallation>
+    <nodeVersion>v10.13.0</nodeVersion>
+    <npmVersion>3.10.10</npmVersion>
+    <maven.resources.plugin>2.4.2</maven.resources.plugin>
   </properties>
 
 
@@ -168,8 +171,8 @@
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v10.13.0</nodeVersion>
-              <npmVersion>3.10.10</npmVersion>
+              <nodeVersion>${nodeVersion}</nodeVersion>
+              <npmVersion>${npmVersion}</npmVersion>
             </configuration>
           </execution>
 
@@ -202,7 +205,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>2.4.2</version>
+        <version>${maven.resources.plugin}</version>
         <executions>
           <execution>
             <id>default-copy-resources</id>
