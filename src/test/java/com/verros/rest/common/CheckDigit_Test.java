@@ -1,4 +1,4 @@
-package com.verros.rest.api;
+package com.verros.rest.common;
 
 import com.verros.rest.common.CheckDigit;
 import org.junit.Test;
