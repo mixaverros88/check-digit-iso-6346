@@ -93,11 +93,6 @@
       <version>${org.hibernate.javax.persistence}</version>
     </dependency>
     <dependency>
-      <groupId>org.hibernate.javax.persistence</groupId>
-      <artifactId>hibernate-jpa-2.0-api</artifactId>
-      <version>${org.hibernate.javax.persistence}</version>
-    </dependency>
-    <dependency>
       <groupId>dom4j</groupId>
       <artifactId>dom4j</artifactId>
       <version>${dom4j}</version>
