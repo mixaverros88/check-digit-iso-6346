@@ -1,13 +1,17 @@
 package com.verros.rest.api;
 
-import com.verros.ds.DatabaseManagement;
+import com.verros.ds.management.DatabaseManagement;
+import com.verros.ds.entities.CheckDigitJpo;
 import com.verros.rest.common.CheckDigit;
 import com.verros.rest.dto.CheckDigitDto;
+import com.verros.rest.process.BusinessProcess;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Stateless
 @Path("/rest")
@@ -20,12 +24,20 @@ public class Rest {
 
   @POST
   public Response validateDigit(CheckDigitDto checkDigitDto) {
-    CheckDigit checkDigit = new CheckDigit();
-    Boolean verify = checkDigit.verify(checkDigitDto.getText());
+    BusinessProcess businessProcess = new BusinessProcess();
+    Boolean verify = businessProcess.validate(checkDigitDto);
 
     databaseManagement.add(checkDigitDto.getText());
-    return Response.status(Response.Status.ACCEPTED).entity(verify.toString()).build();
 
+    return Response.status(Response.Status.OK).entity(verify.toString()).build();
+
+  }
+
+  @GET
+  public Response getAllChecks(){
+    List<CheckDigitJpo> checkDigitList = databaseManagement.getAll();
+
+    return Response.status(Response.Status.OK).entity(checkDigitList).build();
   }
 
 }

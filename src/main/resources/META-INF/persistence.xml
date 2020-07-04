@@ -10,7 +10,7 @@
 
     <jta-data-source>java:jboss/datasources/iso</jta-data-source>
 
-    <class>com.verros.ds.entities.CheckDigit</class>
+    <class>com.verros.ds.entities.CheckDigitJpo</class>
 
     <properties>
 

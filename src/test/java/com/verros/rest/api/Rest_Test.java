@@ -1,25 +1,28 @@
 package com.verros.rest.api;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.CoreMatchers.equalTo;
+
+import config.IsoEndpoints;
+import config.TestConfig;
 import org.json.JSONObject;
 import org.junit.Test;
 
-public class Rest_Test {
+public class Rest_Test extends TestConfig {
 
   @Test
   public void successRest() {
     // use org.json JSONObject to define your json
     JSONObject jsonObj = new JSONObject()
-      .put("text","CSQU3054383");
+      .put("text", "CSQU3054383");
 
     given()
-      .port(8080) // port number
-      .contentType("application/json")  //another way to specify content type
+      .log().all()
       .body(jsonObj.toString())   // use jsonObj toString method
-      .when()
-      .post("http://localhost:8080/iso/api/rest")
-      .then()
+    .when()
+      .post(IsoEndpoints.ISO)
+    .then()
       .assertThat()
       .body(equalTo("true"));
   }
@@ -29,14 +32,13 @@ public class Rest_Test {
   public void falseRest() {
     // use org.json JSONObject to define your json
     JSONObject jsonObj = new JSONObject()
-      .put("text","CSQU30543831");
+      .put("text", "CSQU30543831");
 
     given()
-      .port(8080) // port number
-      .contentType("application/json")  //another way to specify content type
+      .log().all()
       .body(jsonObj.toString())   // use jsonObj toString method
       .when()
-      .post("http://localhost:8080/iso/api/rest")
+      .post(IsoEndpoints.ISO)
       .then()
       .assertThat()
       .body(equalTo("false"));

@@ -78,3 +78,9 @@ After the deployment navigate to the following link
 API: http://localhost:8080/iso/api/rest
 FrontEnd: http://localhost:8080/iso/
 ```
+
+Maven Profiles
+In order to skip test use the profile noTests
+```
+-PnoTests
+```

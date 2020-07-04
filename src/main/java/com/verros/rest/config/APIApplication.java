@@ -1,4 +1,4 @@
-package com.verros.rest;
+package com.verros.rest.config;
 
 import com.verros.rest.api.Rest;
 
@@ -9,10 +9,12 @@ import java.util.Set;
 
 @ApplicationPath("/api")
 public class APIApplication extends Application {
+
   @Override
   public Set<Class<?>> getClasses() {
     Set<Class<?>> set = new HashSet<>();
     set.add(Rest.class);
     return set;
   }
+
 }

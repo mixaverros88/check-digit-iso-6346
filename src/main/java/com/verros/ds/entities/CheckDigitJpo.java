@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "chechDigit")
-public class CheckDigit implements Serializable {
+public class CheckDigitJpo implements Serializable {
 
 
   private static final long serialVersionUID = 1L;
@@ -21,7 +21,7 @@ public class CheckDigit implements Serializable {
   @Column(name = "digit")
   private String digit;
 
-  public CheckDigit() {
+  public CheckDigitJpo() {
   }
 
 
