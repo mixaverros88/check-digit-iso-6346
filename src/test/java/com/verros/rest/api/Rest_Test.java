@@ -18,11 +18,11 @@ public class Rest_Test extends TestConfig {
       .put("text", "CSQU3054383");
 
     given()
-      .log().all()
       .body(jsonObj.toString())   // use jsonObj toString method
-    .when()
+      .when()
       .post(IsoEndpoints.ISO)
-    .then()
+      .then()
+      .statusCode(202)
       .assertThat()
       .body(equalTo("true"));
   }
@@ -35,13 +35,34 @@ public class Rest_Test extends TestConfig {
       .put("text", "CSQU30543831");
 
     given()
-      .log().all()
       .body(jsonObj.toString())   // use jsonObj toString method
       .when()
       .post(IsoEndpoints.ISO)
       .then()
+      .statusCode(202)
       .assertThat()
       .body(equalTo("false"));
   }
 
+  @Test
+  public void getAll() {
+
+    given()
+      .when()
+      .get(IsoEndpoints.ISO)
+      .then()
+      .statusCode(200)
+      .assertThat();
+
+  }
+
+  @Test
+  public void delete(){
+    given()
+      .when()
+      .delete(IsoEndpoints.ISO + "/1")
+      .then()
+      .statusCode(204)
+      .assertThat();
+  }
 }

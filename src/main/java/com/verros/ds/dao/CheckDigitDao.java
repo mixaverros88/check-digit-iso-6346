@@ -1,6 +1,8 @@
 package com.verros.ds.dao;
 
 import com.verros.ds.entities.CheckDigitJpo;
+import com.verros.rest.dto.CheckDigitDto;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -24,6 +26,21 @@ public class CheckDigitDao implements Dao<CheckDigitJpo> {
     String sqlquery = String.format("select e from %s e", t.getSimpleName());
     TypedQuery<T> query = em.createQuery(sqlquery, t);
     return query.getResultList();
+  }
+
+  @Override
+  public void delete(Integer id) {
+    CheckDigitJpo checkDigitJpo = em.find(CheckDigitJpo.class, id);
+    em.remove(checkDigitJpo);
+    em.flush();
+  }
+
+  @Override
+  public void update(CheckDigitDto checkDigitDto) {
+    CheckDigitJpo checkDigitJpo = em.find(CheckDigitJpo.class, checkDigitDto.getId());
+    checkDigitJpo.setDigit(checkDigitDto.getText());
+    em.merge(checkDigitJpo);
+    em.flush();
   }
 
 }

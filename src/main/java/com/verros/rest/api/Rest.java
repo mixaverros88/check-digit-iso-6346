@@ -29,7 +29,7 @@ public class Rest {
 
     databaseManagement.add(checkDigitDto.getText());
 
-    return Response.status(Response.Status.OK).entity(verify.toString()).build();
+    return Response.status(Response.Status.CREATED).entity(verify.toString()).build();
 
   }
 
@@ -39,5 +39,21 @@ public class Rest {
 
     return Response.status(Response.Status.OK).entity(checkDigitList).build();
   }
+
+  @DELETE
+  @Path("/{id}")
+  public  Response delete(@PathParam("id") Integer id){
+    databaseManagement.delete(id);
+
+    return Response.status(Response.Status.NO_CONTENT).build();
+  }
+
+  @PUT
+  public Response update(CheckDigitDto checkDigitDto){
+    databaseManagement.update(checkDigitDto);
+
+    return Response.status(Response.Status.OK).build();
+  }
+
 
 }

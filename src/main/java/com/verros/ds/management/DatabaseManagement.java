@@ -2,6 +2,7 @@ package com.verros.ds.management;
 
 import com.verros.ds.dao.CheckDigitDao;
 import com.verros.ds.entities.CheckDigitJpo;
+import com.verros.rest.dto.CheckDigitDto;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -22,6 +23,12 @@ public class DatabaseManagement {
     return checkDigitDao.getAll(CheckDigitJpo.class);
   }
 
+  public void delete(Integer id){
+    checkDigitDao.delete(id);
+  }
 
+  public void update(CheckDigitDto checkDigitDto){
+    checkDigitDao.update(checkDigitDto);
+  }
 
 }
