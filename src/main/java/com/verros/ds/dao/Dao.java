@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Dao<T> {
 
-  void add(T t);
+  long add(T t);
 
   <T> List<T> getAll(Class<T> t);
 

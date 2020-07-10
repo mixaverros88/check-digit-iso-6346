@@ -70,7 +70,7 @@ Use the maven plug-in (wildfly-maven-plugin) for tomcat server in order to autom
 ```
 You can run the below command in order to deploy the artifact in your local tomcat server
 ```
-mvn clean wildfly:deploy
+mvn clean wildfly:deploy -PnoTests
 ```
 
 After the deployment navigate to the following link

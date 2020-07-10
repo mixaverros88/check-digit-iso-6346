@@ -4,6 +4,9 @@ import com.verros.ds.management.DatabaseManagement;
 import com.verros.ds.entities.CheckDigitJpo;
 import com.verros.rest.common.CheckDigit;
 import com.verros.rest.dto.CheckDigitDto;
+import com.verros.rest.dto.CheckDigitResponseDto;
+import com.verros.rest.exception.BusinessException;
+import com.verros.rest.exception.ExceptionHandler;
 import com.verros.rest.process.BusinessProcess;
 
 import javax.ejb.Stateless;
@@ -27,9 +30,13 @@ public class Rest {
     BusinessProcess businessProcess = new BusinessProcess();
     Boolean verify = businessProcess.validate(checkDigitDto);
 
-    databaseManagement.add(checkDigitDto.getText());
+    Long id = databaseManagement.add(checkDigitDto.getText());
 
-    return Response.status(Response.Status.CREATED).entity(verify.toString()).build();
+    CheckDigitResponseDto checkDigitResponseDto = new CheckDigitResponseDto();
+    checkDigitResponseDto.setId(id);
+    checkDigitResponseDto.setValidateStatus(verify);
+
+    return Response.status(Response.Status.CREATED).entity(checkDigitResponseDto).build();
 
   }
 
@@ -43,13 +50,19 @@ public class Rest {
   @DELETE
   @Path("/{id}")
   public  Response delete(@PathParam("id") Integer id){
-    databaseManagement.delete(id);
-
+    try {
+      databaseManagement.delete(id);
+    } catch (BusinessException e) {
+      e.printStackTrace();
+      return ExceptionHandler.handleException(e);
+    }
     return Response.status(Response.Status.NO_CONTENT).build();
   }
 
   @PUT
-  public Response update(CheckDigitDto checkDigitDto){
+  @Path("/{id}")
+  public Response update(@PathParam("id") Integer id, CheckDigitDto checkDigitDto){
+    checkDigitDto.setId(id);
     databaseManagement.update(checkDigitDto);
 
     return Response.status(Response.Status.OK).build();

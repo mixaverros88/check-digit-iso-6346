@@ -16,9 +16,10 @@ public class CheckDigitDao implements Dao<CheckDigitJpo> {
   private EntityManager em;
 
   @Override
-  public void add(CheckDigitJpo checkDigitJpo) {
+  public long add(CheckDigitJpo checkDigitJpo) {
     em.persist(checkDigitJpo);
     em.flush();
+    return checkDigitJpo.getId();
   }
 
   @Override
@@ -31,8 +32,11 @@ public class CheckDigitDao implements Dao<CheckDigitJpo> {
   @Override
   public void delete(Integer id) {
     CheckDigitJpo checkDigitJpo = em.find(CheckDigitJpo.class, id);
-    em.remove(checkDigitJpo);
-    em.flush();
+    if(checkDigitJpo != null){
+      em.remove(checkDigitJpo);
+      em.flush();
+    }
+
   }
 
   @Override

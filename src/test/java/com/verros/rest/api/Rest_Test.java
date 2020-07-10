@@ -1,19 +1,18 @@
 package com.verros.rest.api;
 
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 import config.IsoEndpoints;
-import config.TestConfig;
+import config.IsoConfig;
+import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.Test;
 
-public class Rest_Test extends TestConfig {
+public class Rest_Test extends IsoConfig {
 
   @Test
   public void successRest() {
-    // use org.json JSONObject to define your json
     JSONObject jsonObj = new JSONObject()
       .put("text", "CSQU3054383");
 
@@ -22,9 +21,8 @@ public class Rest_Test extends TestConfig {
       .when()
       .post(IsoEndpoints.ISO)
       .then()
-      .statusCode(202)
       .assertThat()
-      .body(equalTo("true"));
+      .statusCode(201);
   }
 
 
@@ -39,9 +37,9 @@ public class Rest_Test extends TestConfig {
       .when()
       .post(IsoEndpoints.ISO)
       .then()
-      .statusCode(202)
       .assertThat()
-      .body(equalTo("false"));
+      .statusCode(201)
+      .body("validateStatus",equalTo(false));
   }
 
   @Test
@@ -51,18 +49,36 @@ public class Rest_Test extends TestConfig {
       .when()
       .get(IsoEndpoints.ISO)
       .then()
-      .statusCode(200)
-      .assertThat();
+      .assertThat()
+      .statusCode(200);
 
   }
 
   @Test
   public void delete(){
     given()
+      .pathParam("isoId", 1)
       .when()
-      .delete(IsoEndpoints.ISO + "/1")
+      .delete(IsoEndpoints.ISO_PARAM )
       .then()
-      .statusCode(204)
-      .assertThat();
+      .assertThat()
+      .statusCode(204);
+  }
+
+  @Test
+  public void put(){
+
+    // use org.json JSONObject to define your json
+    JSONObject jsonObj = new JSONObject()
+      .put("text", "CSQU30543831");
+
+    given()
+      .pathParam("isoId", 1)
+      .body(jsonObj.toString())   // use jsonObj toString method
+      .when()
+      .delete(IsoEndpoints.ISO_PARAM)
+      .then()
+      .assertThat()
+      .statusCode(204);
   }
 }
