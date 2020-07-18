@@ -6,6 +6,9 @@ jdk:
 # see https://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
 sudo: false
 
+# ingore tests
+script: mvn clean package -PnoTests
+
 # cache the build tool's caches
 cache:
   directories:
