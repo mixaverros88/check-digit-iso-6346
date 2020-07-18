@@ -80,7 +80,7 @@ FrontEnd: http://localhost:8080/iso/
 ```
 
 Maven Profiles
-In order to skip test use the profile noTests
+In order to skip tests use this profile
 ```
 -PnoTests
 ```
