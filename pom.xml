@@ -19,7 +19,7 @@
     <maven.compiler.plugin>3.2</maven.compiler.plugin>
     <maven.war.plugin>2.1</maven.war.plugin>
     <java.version>1.8</java.version>
-    <log4j>1.2.15</log4j>
+    <log4j>1.2.17</log4j>
     <org.hibernate.javax.persistence>1.0.1.Final</org.hibernate.javax.persistence>
     <org.hibernate>4.3.11.Final</org.hibernate>
     <org.wildfly.plugins>1.1.0.Alpha7</org.wildfly.plugins>
@@ -115,6 +115,12 @@
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>20151123</version>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j}</version>
     </dependency>
 
   </dependencies>

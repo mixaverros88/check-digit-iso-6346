@@ -1,14 +1,13 @@
 package com.verros.rest.dto;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 public class CheckDigitResponseDto {
 
-    private long id;
-    private boolean validateStatus;
+  private long id;
+  private boolean validateStatus;
 
-    public CheckDigitResponseDto() {
-    }
+  public CheckDigitResponseDto() {
+  }
 
 
   public long getId() {

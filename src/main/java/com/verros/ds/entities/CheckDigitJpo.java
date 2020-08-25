@@ -7,9 +7,7 @@ import java.io.Serializable;
 @Table(name = "chechDigit")
 public class CheckDigitJpo implements Serializable {
 
-
   private static final long serialVersionUID = 1L;
-
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,13 +15,11 @@ public class CheckDigitJpo implements Serializable {
   @Column(name = "id")
   private Integer id;
 
-
   @Column(name = "digit")
   private String digit;
 
   public CheckDigitJpo() {
   }
-
 
   public Integer getId() {
     return id;

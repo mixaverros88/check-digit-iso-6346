@@ -21,7 +21,7 @@ public class CheckDigit {
     // Get rid of the last number, the last number is the check digit where we want to generated in order to validate.
     containerNumber = containerNumber.substring(0, containerNumber.length() - 1);
 
-    Map<Integer, Integer> checkDigitLastValue = new HashMap();
+    Map<Integer, Integer> checkDigitLastValue = new HashMap<>();
     checkDigitLastValue.put(0, 0);
     checkDigitLastValue.put(1, 1);
     checkDigitLastValue.put(2, 2);
@@ -34,7 +34,7 @@ public class CheckDigit {
     checkDigitLastValue.put(9, 9);
     checkDigitLastValue.put(10, 0);
 
-    Map<Character, Integer> equivalentNumericalValues = new HashMap();
+    Map<Character, Integer> equivalentNumericalValues = new HashMap<>();
     equivalentNumericalValues.put('0', 0);
     equivalentNumericalValues.put('1', 1);
     equivalentNumericalValues.put('2', 2);
@@ -89,10 +89,6 @@ public class CheckDigit {
     // Step 6
     int last = (int) sum - sumInteger;
 
-    if (checkDigitToVerify == checkDigitLastValue.get(last % 10)) {
-      return true;
-    } else {
-      return false;
-    }
+    return (checkDigitToVerify == checkDigitLastValue.get(last % 10)) ? true : false;
   }
 }
