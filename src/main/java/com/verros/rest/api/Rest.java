@@ -7,10 +7,12 @@ import com.verros.rest.dto.CheckDigitDto;
 import com.verros.rest.dto.CheckDigitResponseDto;
 import com.verros.rest.exception.BusinessException;
 import com.verros.rest.exception.ExceptionHandler;
+import com.verros.rest.inter.TrakingInterceptor;
 import com.verros.rest.process.BusinessProcess;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,6 +22,7 @@ import java.util.List;
 @Path("/rest")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@Interceptors(TrakingInterceptor.class)
 public class Rest {
 
   @Inject
