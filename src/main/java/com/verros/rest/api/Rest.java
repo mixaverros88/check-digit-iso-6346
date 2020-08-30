@@ -27,6 +27,7 @@ public class Rest {
   DatabaseManagement databaseManagement;
 
   //commit 1
+  //commit 2
 
   @POST
   public Response validateDigit(CheckDigitDto checkDigitDto) {
