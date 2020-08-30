@@ -26,6 +26,8 @@ public class Rest {
   @Inject
   DatabaseManagement databaseManagement;
 
+  //commit 1
+
   @POST
   public Response validateDigit(CheckDigitDto checkDigitDto) {
     BusinessProcess businessProcess = new BusinessProcess();
