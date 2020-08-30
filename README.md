@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/mixaverros88/check-digit-iso-6346.svg?branch=master)](https://travis-ci.com/mixaverros88/check-digit-iso-6346)
 # Check Digit ISO 6346
 
-This repo in an implementation of the ISO 6346.
+This repo in an implementation of the ISO 6346. 
 
 ### What is ISO 6346 (wikipedia definition)
 ISO 6346 is an international standard covering the coding, identification and marking of intermodal (shipping) containers used within containerized intermodal freight transport.The standard establishes a visual identification system for every container that includes a unique serial number (with check digit), the owner, a country code, a size, type and equipment category as well as any operational marks. The standard is managed by the International Container Bureau (BIC).
