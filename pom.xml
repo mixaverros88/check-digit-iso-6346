@@ -25,7 +25,7 @@
     <org.wildfly.plugins>1.1.0.Alpha7</org.wildfly.plugins>
     <dom4j>1.6.1</dom4j>
     <javaee-api>8.0</javaee-api>
-    <httpclient>4.5.8</httpclient>
+    <httpclient>4.5.13</httpclient>
     <angular.project.location>angular/check-digit-iso6346</angular.project.location>
     <angular.project.nodeinstallation>angular/check-digit-iso6346/node</angular.project.nodeinstallation>
     <nodeVersion>v10.13.0</nodeVersion>
