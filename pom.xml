@@ -21,7 +21,7 @@
     <java.version>1.8</java.version>
     <log4j>1.2.17</log4j>
     <org.hibernate.javax.persistence>1.0.1.Final</org.hibernate.javax.persistence>
-    <org.hibernate>4.3.11.Final</org.hibernate>
+    <org.hibernate>5.3.20.Final</org.hibernate>
     <org.wildfly.plugins>1.1.0.Alpha7</org.wildfly.plugins>
     <dom4j>1.6.1</dom4j>
     <javaee-api>8.0</javaee-api>
