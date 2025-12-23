@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/mixaverros88/check-digit-iso-6346.svg?branch=master)](https://travis-ci.com/mixaverros88/check-digit-iso-6346)
 # Check Digit ISO 6346
 
 This repo in an implementation of the ISO 6346. 
